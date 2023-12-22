@@ -40,8 +40,11 @@
             this.btn_Xoa = new System.Windows.Forms.Button();
             this.btn_XuatHD = new System.Windows.Forms.Button();
             this.btn_Thoat = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dgv_Bang = new System.Windows.Forms.DataGridView();
+            this.MaNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Bang)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -120,6 +123,7 @@
             this.btn_Them.TabIndex = 7;
             this.btn_Them.Text = "Thêm";
             this.btn_Them.UseVisualStyleBackColor = true;
+            this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
             // 
             // btn_XoaTrang
             // 
@@ -130,6 +134,7 @@
             this.btn_XoaTrang.TabIndex = 8;
             this.btn_XoaTrang.Text = "Xóa trắng";
             this.btn_XoaTrang.UseVisualStyleBackColor = true;
+            this.btn_XoaTrang.Click += new System.EventHandler(this.btn_XoaTrang_Click);
             // 
             // btn_Xoa
             // 
@@ -140,6 +145,7 @@
             this.btn_Xoa.TabIndex = 9;
             this.btn_Xoa.Text = "Xóa";
             this.btn_Xoa.UseVisualStyleBackColor = true;
+            this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
             // 
             // btn_XuatHD
             // 
@@ -150,6 +156,7 @@
             this.btn_XuatHD.TabIndex = 10;
             this.btn_XuatHD.Text = "Xuất Hóa Đơn";
             this.btn_XuatHD.UseVisualStyleBackColor = true;
+            this.btn_XuatHD.Click += new System.EventHandler(this.btn_XuatHD_Click);
             // 
             // btn_Thoat
             // 
@@ -162,20 +169,43 @@
             this.btn_Thoat.UseVisualStyleBackColor = true;
             this.btn_Thoat.Click += new System.EventHandler(this.btn_Thoat_Click);
             // 
-            // dataGridView1
+            // dgv_Bang
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(281, 69);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(475, 169);
-            this.dataGridView1.TabIndex = 12;
+            this.dgv_Bang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Bang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaNCC,
+            this.TenNCC,
+            this.DiaChi});
+            this.dgv_Bang.Location = new System.Drawing.Point(281, 69);
+            this.dgv_Bang.Name = "dgv_Bang";
+            this.dgv_Bang.Size = new System.Drawing.Size(475, 169);
+            this.dgv_Bang.TabIndex = 12;
+            this.dgv_Bang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Bang_CellContentClick);
+            // 
+            // MaNCC
+            // 
+            this.MaNCC.DataPropertyName = "MaNCC";
+            this.MaNCC.HeaderText = "Mã NCC";
+            this.MaNCC.Name = "MaNCC";
+            // 
+            // TenNCC
+            // 
+            this.TenNCC.DataPropertyName = "TenNCC";
+            this.TenNCC.HeaderText = "Tên NCC";
+            this.TenNCC.Name = "TenNCC";
+            // 
+            // DiaChi
+            // 
+            this.DiaChi.DataPropertyName = "DiaChi";
+            this.DiaChi.HeaderText = "Địa Chỉ";
+            this.DiaChi.Name = "DiaChi";
             // 
             // Cau2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(790, 365);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgv_Bang);
             this.Controls.Add(this.btn_Thoat);
             this.Controls.Add(this.btn_XuatHD);
             this.Controls.Add(this.btn_Xoa);
@@ -190,7 +220,8 @@
             this.Controls.Add(this.label1);
             this.Name = "Cau2";
             this.Text = "Thông Tin Nhà Cung Cấp";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.Cau2_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Bang)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -210,6 +241,9 @@
         private System.Windows.Forms.Button btn_Xoa;
         private System.Windows.Forms.Button btn_XuatHD;
         private System.Windows.Forms.Button btn_Thoat;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgv_Bang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaNCC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenNCC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
     }
 }

@@ -83,6 +83,7 @@
             // 
             // txt_TenDN
             // 
+            this.txt_TenDN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_TenDN.Location = new System.Drawing.Point(466, 145);
             this.txt_TenDN.Multiline = true;
             this.txt_TenDN.Name = "txt_TenDN";
@@ -91,9 +92,11 @@
             // 
             // txt_MatKhau
             // 
+            this.txt_MatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_MatKhau.Location = new System.Drawing.Point(466, 193);
             this.txt_MatKhau.Multiline = true;
             this.txt_MatKhau.Name = "txt_MatKhau";
+            this.txt_MatKhau.PasswordChar = '*';
             this.txt_MatKhau.Size = new System.Drawing.Size(251, 27);
             this.txt_MatKhau.TabIndex = 5;
             // 
