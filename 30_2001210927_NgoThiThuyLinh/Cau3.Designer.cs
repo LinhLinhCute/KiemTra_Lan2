@@ -45,6 +45,11 @@
             this.btn_Them = new System.Windows.Forms.Button();
             this.btn__XoaTrang = new System.Windows.Forms.Button();
             this.btn_Thoat = new System.Windows.Forms.Button();
+            this.MaThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_HoaDon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -169,10 +174,17 @@
             // dgv_HoaDon
             // 
             this.dgv_HoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_HoaDon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaThuoc,
+            this.TenThuoc,
+            this.SoLuong,
+            this.DonGia,
+            this.NgayNhap});
             this.dgv_HoaDon.Location = new System.Drawing.Point(246, 80);
             this.dgv_HoaDon.Name = "dgv_HoaDon";
             this.dgv_HoaDon.Size = new System.Drawing.Size(624, 215);
             this.dgv_HoaDon.TabIndex = 14;
+            this.dgv_HoaDon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_HoaDon_CellContentClick);
             // 
             // btn_Them
             // 
@@ -183,6 +195,7 @@
             this.btn_Them.TabIndex = 15;
             this.btn_Them.Text = "Thêm";
             this.btn_Them.UseVisualStyleBackColor = true;
+            this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
             // 
             // btn__XoaTrang
             // 
@@ -193,6 +206,7 @@
             this.btn__XoaTrang.TabIndex = 16;
             this.btn__XoaTrang.Text = "Xóa Trắng";
             this.btn__XoaTrang.UseVisualStyleBackColor = true;
+            this.btn__XoaTrang.Click += new System.EventHandler(this.btn__XoaTrang_Click);
             // 
             // btn_Thoat
             // 
@@ -203,6 +217,37 @@
             this.btn_Thoat.TabIndex = 17;
             this.btn_Thoat.Text = "Thoát";
             this.btn_Thoat.UseVisualStyleBackColor = true;
+            this.btn_Thoat.Click += new System.EventHandler(this.btn_Thoat_Click);
+            // 
+            // MaThuoc
+            // 
+            this.MaThuoc.DataPropertyName = "MaHD";
+            this.MaThuoc.HeaderText = "Mã Thuốc";
+            this.MaThuoc.Name = "MaThuoc";
+            // 
+            // TenThuoc
+            // 
+            this.TenThuoc.DataPropertyName = "TenThuoc";
+            this.TenThuoc.HeaderText = "Tên Thuốc";
+            this.TenThuoc.Name = "TenThuoc";
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.DataPropertyName = "Soluong";
+            this.SoLuong.HeaderText = "Số Lượng";
+            this.SoLuong.Name = "SoLuong";
+            // 
+            // DonGia
+            // 
+            this.DonGia.DataPropertyName = "Dongia";
+            this.DonGia.HeaderText = "Đơn Giá";
+            this.DonGia.Name = "DonGia";
+            // 
+            // NgayNhap
+            // 
+            this.NgayNhap.DataPropertyName = "Ngaynhap";
+            this.NgayNhap.HeaderText = "Ngày Nhập";
+            this.NgayNhap.Name = "NgayNhap";
             // 
             // Cau3
             // 
@@ -228,6 +273,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Cau3";
             this.Text = "Hóa Đơn Nhập";
+            this.Load += new System.EventHandler(this.Cau3_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_HoaDon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -253,5 +299,10 @@
         private System.Windows.Forms.Button btn_Them;
         private System.Windows.Forms.Button btn__XoaTrang;
         private System.Windows.Forms.Button btn_Thoat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaThuoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenThuoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayNhap;
     }
 }

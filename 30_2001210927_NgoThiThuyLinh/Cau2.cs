@@ -39,11 +39,11 @@ namespace _30_2001210927_NgoThiThuyLinh
                 string read;
                 read = "select * from Nhacungcap ";
                 DataSet ds = new DataSet();
-                // tạo dataAdapter
+                
                 SqlDataAdapter da = new SqlDataAdapter(read, consql);
-                // đổ dữ liệu vào dataset
+                
                 da.Fill(ds, "NCC");
-                //Gán dữ liệu vào datagridview
+                
                 dgv_Bang.DataSource = ds.Tables["NCC"];
 
             }
